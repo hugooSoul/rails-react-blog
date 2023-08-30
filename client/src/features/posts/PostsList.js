@@ -11,12 +11,6 @@ function PostsList() {
       // ``
       try{
         const response = await fetch(API_URL);
-        // const response = await fetch('http://localhost:3000/api/v1/posts', {
-        //   method: 'POST',
-        //   headers: {
-        //     accept: 'application/json',
-        //   },
-        // });
 
         if (response.ok) {
           const json = await response.json();
