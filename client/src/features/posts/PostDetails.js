@@ -50,6 +50,8 @@ function PostDetails() {
 
       <Link to='/'>Back to Posts</Link>
       {' | '}
+      <Link to={`/posts/${post.id}/edit`}>Edit Post</Link>
+      {' | '}
       <button onClick={deletePost}>Delete</button>
     </div>
   )
