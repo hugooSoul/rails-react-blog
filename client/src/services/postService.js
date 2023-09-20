@@ -1,7 +1,7 @@
 import { API_URL } from '../constants';
 
 async function fetchAllPosts() {
-  const response = await fetch(API_URL);
+  const response = await fetch(`${API_URL}`);
 
   if (!response.ok) {
     throw new Error(response.statusText);
@@ -21,7 +21,7 @@ async function fetchPost(id) {
 }
 
 async function createPost(postData) {
-  const response = await fetch(API_URL, {
+  const response = await fetch(`${API_URL}`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -57,15 +57,11 @@ async function deletePost(id) {
     method: 'DELETE',
   });
 
-  if (!response.ok) {
-    throw new Error(response.statusText);
-  }
-
   if (response.status === 204) {
     return null;
   }
 
-  return response.json();
+  throw new Error(response.statusText);
 }
 
 export { fetchAllPosts, createPost, fetchPost, updatePost, deletePost };
