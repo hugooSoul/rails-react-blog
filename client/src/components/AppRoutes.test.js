@@ -36,7 +36,7 @@ jest.mock('../features/posts/PostEditForm', () => {
 });
 
 jest.mock('../constants', () => ({
-  API_URL: 'hhtp://your-test-api-url',
+  API_URL: 'http://your-test-api-url',
 }));
 
 describe('AppRoutes component', () => {

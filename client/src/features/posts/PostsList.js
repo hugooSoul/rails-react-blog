@@ -9,7 +9,6 @@ function PostsList() {
 
   useEffect(() => {
     async function loadPosts() {
-      // ``
       try{
         const data = await fetchAllPosts();
         setPosts(data);
@@ -17,6 +16,7 @@ function PostsList() {
       } catch (e) {
         setError(e);
         setLoading(false);
+        console.error('Failed to fetch posts: ', e);
       }
     }
     loadPosts();
